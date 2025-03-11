@@ -1,3 +1,19 @@
+Task description:
+
+build a simple e-commerce product catalog with these requirements:
+
+1-Create a product listing page that fetches data from a mock API (you can provide JSON data or have them use a public API)
+2-Implement client-side filtering by category, price range, and ratings
+3-Add server-side pagination for the product list
+4-Include product detail pages with dynamic routing
+5-Implement a simple search functionality
+6-Add a "favorites" feature using client-side state management
+7-Make the UI responsive for mobile and desktop
+8-Include proper loading and error states
+
+Implement with these technologies:
+Next.js, Typescript, TailwindCss, Shadcn/ui, React-Query-Tanstak, Zustand
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
