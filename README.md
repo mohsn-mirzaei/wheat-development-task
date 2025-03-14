@@ -25,7 +25,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, Clone this repo and install the dependencies,
+
+Then copy and configure the environment file:
+
+- An example.env file is provided. Please copy it to a new file named .env and replace the placeholder values with your actual configuration. I use https://api.escuelajs.co API for mock API
+
+Then, run the development server:
 
 ```bash
 npm run dev
