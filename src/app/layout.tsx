@@ -5,6 +5,7 @@ import { Heart, ShoppingBag } from "lucide-react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,6 +39,25 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <NextTopLoader
+            color="#000"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={false}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px #000,0 0 5px #000"
+            template='<div class="bar" role="bar">
+                            <div class="peg"></div>
+                          </div> 
+                          <div class="spinner hidden" role="spinner">
+                            <div class="spinner-icon"></div>
+                          </div>'
+            zIndex={1600}
+            showAtBottom={false}
+          />
           <header className="border-b">
             <div className="container mx-auto px-4 py-4 flex items-center justify-between">
               <Link href="/" className="text-xl font-bold">

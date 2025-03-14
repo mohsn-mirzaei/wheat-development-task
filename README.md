@@ -16,7 +16,7 @@ build a simple e-commerce product catalog with these requirements:
 
 7-Make the UI responsive for mobile and desktop // DONE
 
-8-Include proper loading and error states
+8-Include proper loading and error states // DONE
 
 Implement with these technologies:
 Next.js, Typescript, TailwindCss, Shadcn/ui, React-Query-Tanstak, Zustand
