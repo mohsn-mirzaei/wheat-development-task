@@ -9,13 +9,15 @@ import Product from "@/entities/Product";
 
 export default function ProductCard({ product }: { product: Product }) {
   const isFavorite = false;
+  // Generate a random rating since the API doesn't provide one
+  const randomRating = Math.floor(Math.random() * 5) + 1;
 
   return (
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative aspect-square">
         <Link href={`/products/${product.id}`}>
           <Image
-            src={product.image || "/placeholder.svg"}
+            src={product.images[0] || "/placeholder.svg"}
             alt={product.title}
             fill
             className="object-contain transition-transform hover:scale-105"
@@ -43,9 +45,9 @@ export default function ProductCard({ product }: { product: Product }) {
           </Link>
         </div>
         <div className="mt-2 flex items-center gap-2">
-          <StarRating rating={product.rating.rate} />
+          <StarRating rating={randomRating} />
           <span className="text-sm text-muted-foreground">
-            ({product.rating.rate})
+            ({randomRating})
           </span>
         </div>
         <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
@@ -56,7 +58,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="flex justify-between items-center w-full">
           <span className="font-bold">${product.price.toFixed(2)}</span>
           <span className="text-xs text-muted-foreground">
-            {product.category}
+            {product.category.name}
           </span>
         </div>
       </CardFooter>
