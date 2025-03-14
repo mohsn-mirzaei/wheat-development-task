@@ -36,13 +36,13 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           <QueryClientProviders>
             <NextTopLoader
-              color="#000"
+              color="#3178c6"
               initialPosition={0.08}
               crawlSpeed={200}
               height={3}
@@ -50,7 +50,7 @@ export default function RootLayout({
               showSpinner={false}
               easing="ease"
               speed={200}
-              shadow="0 0 10px #000,0 0 5px #000"
+              shadow="0 0 10px #3178c6,0 0 5px #3178c6"
               template='<div class="bar" role="bar">
                             <div class="peg"></div>
                           </div> 
