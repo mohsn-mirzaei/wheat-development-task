@@ -1,5 +1,6 @@
 import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
+import QueryClientProviders from "@/providers/query-client-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Heart, ShoppingBag } from "lucide-react";
 import type { Metadata } from "next";
@@ -39,52 +40,54 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextTopLoader
-            color="#000"
-            initialPosition={0.08}
-            crawlSpeed={200}
-            height={3}
-            crawl={true}
-            showSpinner={false}
-            easing="ease"
-            speed={200}
-            shadow="0 0 10px #000,0 0 5px #000"
-            template='<div class="bar" role="bar">
+          <QueryClientProviders>
+            <NextTopLoader
+              color="#000"
+              initialPosition={0.08}
+              crawlSpeed={200}
+              height={3}
+              crawl={true}
+              showSpinner={false}
+              easing="ease"
+              speed={200}
+              shadow="0 0 10px #000,0 0 5px #000"
+              template='<div class="bar" role="bar">
                             <div class="peg"></div>
                           </div> 
                           <div class="spinner hidden" role="spinner">
                             <div class="spinner-icon"></div>
                           </div>'
-            zIndex={1600}
-            showAtBottom={false}
-          />
-          <header className="border-b">
-            <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-              <Link href="/" className="text-xl font-bold">
-                ShopCatalog
-              </Link>
-              <div className="flex items-center gap-4">
-                <Link href="/favorites">
-                  <Button variant="ghost" size="icon">
-                    <Heart className="h-5 w-5" />
-                    <span className="sr-only">Favorites</span>
-                  </Button>
+              zIndex={1600}
+              showAtBottom={false}
+            />
+            <header className="border-b">
+              <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+                <Link href="/" className="text-xl font-bold">
+                  ShopCatalog
                 </Link>
-                <Button variant="ghost" size="icon">
-                  <ShoppingBag className="h-5 w-5" />
-                  <span className="sr-only">Cart</span>
-                </Button>
-                <ModeToggle />
+                <div className="flex items-center gap-4">
+                  <Link href="/favorites">
+                    <Button variant="ghost" size="icon">
+                      <Heart className="h-5 w-5" />
+                      <span className="sr-only">Favorites</span>
+                    </Button>
+                  </Link>
+                  <Button variant="ghost" size="icon">
+                    <ShoppingBag className="h-5 w-5" />
+                    <span className="sr-only">Cart</span>
+                  </Button>
+                  <ModeToggle />
+                </div>
               </div>
-            </div>
-          </header>
-          <main>{children}</main>
-          <footer className="border-t mt-12">
-            <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} ShopCatalog. All rights
-              reserved.
-            </div>
-          </footer>
+            </header>
+            <main>{children}</main>
+            <footer className="border-t mt-12">
+              <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
+                &copy; {new Date().getFullYear()} ShopCatalog. All rights
+                reserved.
+              </div>
+            </footer>
+          </QueryClientProviders>
         </ThemeProvider>
       </body>
     </html>

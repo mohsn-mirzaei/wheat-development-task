@@ -4,7 +4,7 @@ build a simple e-commerce product catalog with these requirements:
 
 1-Create a product listing page that fetches data from a mock API (you can provide JSON data or have them use a public API) // DONE
 
-2-Implement client-side filtering by category, price range, and ratings
+2-Implement client-side filtering by category, price range, and ratings // DONE
 
 3-Add server-side pagination for the product list // DONE
 

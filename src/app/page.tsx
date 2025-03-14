@@ -1,4 +1,5 @@
 import Pagination from "@/components/pagination";
+import ProductFilters from "@/components/product-filters";
 import ProductList from "@/components/product-list";
 import ProductListLayout from "@/components/product-list-layout";
 import ProductSearch from "@/components/product-search";
@@ -23,7 +24,7 @@ export default async function Home(props: {
         <h1 className="text-3xl font-bold">Product Catalog</h1>
         <div className="flex gap-4 justify-between">
           <ProductSearch />
-          {/* <ProductFilters /> */}
+          <ProductFilters />
         </div>
       </div>
       <Suspense
