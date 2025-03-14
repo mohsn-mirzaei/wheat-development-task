@@ -18,7 +18,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useFilterStore } from "@/filterStore";
+import { useFilterStore } from "@/stores/filterStore";
 import useCategories from "@/hooks/useCategories";
 import { Filter, Loader2 } from "lucide-react";
 

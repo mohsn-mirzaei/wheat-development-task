@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import Product from "@/entities/Product";
-import { Heart, ShoppingCart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
+import FavoriteButton from "./favorite-button";
 
 export default function ProductDetails({ product }: { product: Product }) {
-  const isFavorite = false;
-
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid md:grid-cols-2 gap-8">
@@ -46,20 +45,7 @@ export default function ProductDetails({ product }: { product: Product }) {
               <ShoppingCart className="mr-2 h-4 w-4" />
               Add to Cart
             </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              aria-label={
-                isFavorite ? "Remove from favorites" : "Add to favorites"
-              }
-            >
-              <Heart
-                className={`h-5 w-5 ${
-                  isFavorite ? "fill-red-500 text-red-500" : ""
-                }`}
-              />
-            </Button>
+            <FavoriteButton product={product} type="details" />
           </div>
         </div>
       </div>

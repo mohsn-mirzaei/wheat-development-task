@@ -1,13 +1,10 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Product from "@/entities/Product";
-import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteButton from "./favorite-button";
 
 export default function ProductCard({ product }: { product: Product }) {
-  const isFavorite = false;
-
   return (
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative aspect-square">
@@ -20,18 +17,7 @@ export default function ProductCard({ product }: { product: Product }) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />
         </Link>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-2 right-2 bg-background/80 backdrop-blur-sm rounded-full"
-          aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
-        >
-          <Heart
-            className={`h-5 w-5 ${
-              isFavorite ? "fill-red-500 text-red-500" : ""
-            }`}
-          />
-        </Button>
+        <FavoriteButton product={product} type="card" />
       </div>
       <CardContent className="flex-grow p-4">
         <div className="flex justify-between items-start gap-2">

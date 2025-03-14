@@ -1,6 +1,6 @@
+import Filters from "@/entities/Filters";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import Filters from "./entities/Filters";
 
 interface FilterState extends Filters {
   setCategory: (category: string) => void;

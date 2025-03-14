@@ -12,7 +12,7 @@ build a simple e-commerce product catalog with these requirements:
 
 5-Implement a simple search functionality // DONE
 
-6-Add a "favorites" feature using client-side state management
+6-Add a "favorites" feature using client-side state management // DONE
 
 7-Make the UI responsive for mobile and desktop // DONE
 

@@ -3,7 +3,7 @@
 import React from "react";
 import ProductCard from "./product-card";
 import Product from "@/entities/Product";
-import { useFilterStore } from "@/filterStore";
+import { useFilterStore } from "@/stores/filterStore";
 import ProductListLayout from "./product-list-layout";
 
 const Products = ({ products }: { products: Product[] }) => {
