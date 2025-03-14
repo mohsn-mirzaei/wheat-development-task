@@ -1,16 +1,12 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import Product from "@/entities/Product";
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { StarRating } from "@/components/star-rating";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import Product from "@/entities/Product";
-
 export default function ProductCard({ product }: { product: Product }) {
   const isFavorite = false;
-  // Generate a random rating since the API doesn't provide one
-  const randomRating = Math.floor(Math.random() * 5) + 1;
 
   return (
     <Card className="overflow-hidden h-full flex flex-col">
@@ -28,7 +24,6 @@ export default function ProductCard({ product }: { product: Product }) {
           variant="ghost"
           size="icon"
           className="absolute top-2 right-2 bg-background/80 backdrop-blur-sm rounded-full"
-          // onClick={() => console.log("Toggle favorite")}
           aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
         >
           <Heart
@@ -43,12 +38,6 @@ export default function ProductCard({ product }: { product: Product }) {
           <Link href={`/products/${product.id}`} className="hover:underline">
             <h3 className="font-medium line-clamp-2">{product.title}</h3>
           </Link>
-        </div>
-        <div className="mt-2 flex items-center gap-2">
-          <StarRating rating={randomRating} />
-          <span className="text-sm text-muted-foreground">
-            ({randomRating})
-          </span>
         </div>
         <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
           {product.description}

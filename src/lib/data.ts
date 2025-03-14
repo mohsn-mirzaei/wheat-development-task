@@ -42,3 +42,15 @@ export async function fetchProductsPage(query: string): Promise<number> {
 
   return Math.ceil(products.length / PAGE_LIMIT);
 }
+
+export async function fetchProduct(id: number | string): Promise<Product> {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/products/${id}`
+  );
+  if (!res.ok) {
+    throw new Error(`Error fetching product with id ${id}`);
+  }
+  return res
+    .json()
+    .catch(() => Promise.reject(new Error("Error parsing product data")));
+}

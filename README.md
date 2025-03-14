@@ -8,7 +8,7 @@ build a simple e-commerce product catalog with these requirements:
 
 3-Add server-side pagination for the product list // DONE
 
-4-Include product detail pages with dynamic routing
+4-Include product detail pages with dynamic routing // DONE
 
 5-Implement a simple search functionality // DONE
 
